@@ -9,25 +9,14 @@ function getDogImages() {
 
 
 function showTheDogs(responseJson) {
-    //i = numberOfDogs;
+    $('.results-img').empty();
     arrayOfDogs = responseJson.message;
-    console.log(arrayOfDogs);
-
-    /*(arrayOfDogs).map(function(arrayOfDogs) {
-        listDogs = '';
-        $('.results-img').replaceWith(
-            listDogs += `<img src="${arrayOfDogs }">`)
-        
-        console.log(listDogs)
-    })*/
     listDogs = '';
     for (let i = 0; i < arrayOfDogs.length; i++){
-        $('.results-img').replaceWith(
-            listDogs += `<img src="${arrayOfDogs[i]}" class="results-img">`);
-      } 
-      console.log(listDogs);
-
-    $('.results').removeClass('hidden');
+        console.log(i);
+        listDogs += `<img src="${arrayOfDogs[i]}" class="results-img">`;
+        } 
+        $('.results-img').append(listDogs);
 }
 
 function howManyDogs() {
