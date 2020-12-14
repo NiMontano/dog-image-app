@@ -20,6 +20,7 @@ function showTheDogs(responseJson) {
 }
 
 function submitUserName() {
+    numberOfDogs = 3;
     $('form').submit('click', function(event) {
         event.preventDefault();
         const usernameSearch = $('#js-search-term').val();
