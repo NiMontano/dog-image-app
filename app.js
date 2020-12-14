@@ -19,14 +19,11 @@ function showTheDogs(responseJson) {
         $('.results-img').append(listDogs);
 }
 
-function howManyDogs() {
-    numberOfDogs = 3;
-    getDogImages();
-    console.log(numberOfDogs);
+function submitUserName() {
     $('form').submit('click', function(event) {
-        numberOfDogs = $("input[type='number']").val();
         event.preventDefault();
-        console.log(numberOfDogs);
+        const usernameSearch = $('#js-search-term').val();
+        
         getDogImages(); 
     });
 };
