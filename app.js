@@ -1,5 +1,6 @@
 
 function getDogImages() {
+    
     let allTheDogs = `https://dog.ceo/api/breeds/image/random/${numberOfDogs}`
     //const options = {method: 'GET'};
     fetch(allTheDogs)
@@ -19,11 +20,13 @@ function showTheDogs(responseJson) {
         $('.results-img').append(listDogs);
 }
 
-function submitUserName() {
+function howManyDogs() {
     numberOfDogs = 3;
+    getDogImages();
     $('form').submit('click', function(event) {
+        numberOfDogs = $("input[type='number']").val();
         event.preventDefault();
-        const usernameSearch = $('#js-search-term').val();
+        //const usernameSearch = $('#js-search-term').val();
         
         getDogImages(); 
     });
