@@ -11,12 +11,13 @@ function getDogImages() {
 
 function showTheDogs(responseJson) {
     $('.results-img').empty();
+    console.log(responseJson);
     arrayOfDogs = responseJson.message;
     listDogs = '';
     for (let i = 0; i < arrayOfDogs.length; i++){
-        console.log(i);
         listDogs += `<img src="${arrayOfDogs[i]}" class="results-img">`;
         } 
+        console.log(listDogs);
         $('.results-img').append(listDogs);
 }
 
@@ -26,13 +27,11 @@ function howManyDogs() {
     $('form').submit('click', function(event) {
         numberOfDogs = $("input[type='number']").val();
         event.preventDefault();
-        //const usernameSearch = $('#js-search-term').val();
-        
+       
         getDogImages(); 
     });
 };
 
 $(function() {
-    console.log("page running");
     howManyDogs();
 });
